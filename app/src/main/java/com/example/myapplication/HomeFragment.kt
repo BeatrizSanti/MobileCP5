@@ -1,59 +1,81 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.*
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class HomeFragment : Fragment(R.layout.fragment_home) {
+    private lateinit var spinner: Spinner
+    private lateinit var topStoriesTitle: TextView
+    private lateinit var homeImageView: ImageView
+    private lateinit var descriptionTextView: TextView
+    private lateinit var imageGuenther: ImageView
+    private lateinit var guentherFeatureTitle: TextView
+    private lateinit var imageMassaAlonso: ImageView
+    private lateinit var massaFeatureTitle: TextView
+    private lateinit var imageNewey: ImageView
+    private lateinit var neweyFeatureTitle: TextView
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        spinner = view.findViewById(R.id.newsSpinner)
+        topStoriesTitle = view.findViewById(R.id.topStoriesTitle)
+        homeImageView = view.findViewById(R.id.home)
+        descriptionTextView = view.findViewById(R.id.descriptionTextView)
+        imageGuenther = view.findViewById(R.id.imageGuenther)
+        guentherFeatureTitle = view.findViewById(R.id.guentherFeatureTitle)
+        imageMassaAlonso = view.findViewById(R.id.imageMassaAlonso)
+        massaFeatureTitle = view.findViewById(R.id.massaFeatureTitle)
+        imageNewey = view.findViewById(R.id.imageNewey)
+        neweyFeatureTitle = view.findViewById(R.id.neweyFeatureTitle)
+
+
+
+
+        val categories = arrayOf("All", "Racing", "Drivers", "Teams", "Technical")
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, categories)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                filterNews(categories[position])
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun filterNews(category: String) {
+        val allViews = listOf(topStoriesTitle, homeImageView, descriptionTextView, imageGuenther, guentherFeatureTitle, imageMassaAlonso, massaFeatureTitle, imageNewey, neweyFeatureTitle)
+
+        allViews.forEach { it.visibility = View.GONE }  // Hide everything initially
+
+        if (category == "All") {
+            allViews.forEach { it.visibility = View.VISIBLE} // Show all if "All" is selected
+        } else {
+            when (category) {
+                "Racing" -> {
+                    listOf(topStoriesTitle, homeImageView, descriptionTextView).forEach { it.visibility = View.VISIBLE }
+                }
+                "Drivers" -> {
+                    listOf(topStoriesTitle, imageMassaAlonso, massaFeatureTitle).forEach { it.visibility = View.VISIBLE }
+                }
+                "Teams" -> {
+                    listOf(topStoriesTitle, imageGuenther, guentherFeatureTitle).forEach { it.visibility = View.VISIBLE }
+                }
+                "Technical" -> {
+                    listOf(topStoriesTitle, imageNewey, neweyFeatureTitle).forEach { it.visibility = View.VISIBLE }
                 }
             }
+        }
     }
 }

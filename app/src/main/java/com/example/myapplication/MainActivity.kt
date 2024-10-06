@@ -5,14 +5,11 @@ import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var icHome: ImageView
     private lateinit var icFlag: ImageView
     private lateinit var icHelmet: ImageView
     private lateinit var icListar: ImageView
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,33 +22,28 @@ class MainActivity : AppCompatActivity() {
         icListar = findViewById(R.id.icListar)
 
 
-        icHome.setOnClickListener{
+        icHome.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,HomeFragment())
+                .replace(R.id.fragmentContainerView, HomeFragment())
                 .commit()
         }
 
-        icFlag.setOnClickListener{
+        icFlag.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,RacingFragment())
+                .replace(R.id.fragmentContainerView, RacingFragment())
                 .commit()
         }
 
-
-        icHelmet.setOnClickListener{
+        icHelmet.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,HelmetFragment())
+                .replace(R.id.fragmentContainerView, HelmetFragment())
                 .commit()
         }
 
-        icListar.setOnClickListener{
+        icListar.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,ListarFragment())
+                .replace(R.id.fragmentContainerView, ListarFragment())
                 .commit()
         }
-
-
-
-
     }
 }
