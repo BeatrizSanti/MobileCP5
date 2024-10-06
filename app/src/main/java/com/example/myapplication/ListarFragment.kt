@@ -5,63 +5,57 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ImageButton // Import for ImageButton
+import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.myapplication.model.Equipe
 import com.example.myapplication.repository.EquipeRepository
 
 class ListarFragment : Fragment() {
+
     private lateinit var listView: ListView
-    private lateinit var adapter: ArrayAdapter<Equipe> // Use a custom adapter
+    private lateinit var adapter: ArrayAdapter<Equipe>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_listar, container, false)
+        val view = inflater.inflate(R.layout.fragment_listar, container, false)
+        listView = view.findViewById(R.id.list_view_equipes)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        listView = view.findViewById(R.id.list_view_equipes)
-
         adapter = object : ArrayAdapter<Equipe>(requireContext(), R.layout.item_equipe, EquipeRepository.equipes) {
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-                val equipe = getItem(position) // Get the Equipe object
-                var itemView = convertView
+                val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_equipe, parent, false)
+                val equipe = getItem(position)
 
-                if (itemView == null) {
-                    itemView = LayoutInflater.from(context).inflate(R.layout.item_equipe, parent, false)
-                }
-
-                itemView!!.findViewById<TextView>(R.id.tv_nome_equipe).text = equipe?.nome
-                itemView.findViewById<TextView>(R.id.tv_piloto1).text = equipe?.piloto1
-                itemView.findViewById<TextView>(R.id.tv_piloto2).text = equipe?.piloto2
+                val nomeEquipeTextView = view.findViewById<TextView>(R.id.tv_nome_equipe)
+                val piloto1TextView = view.findViewById<TextView>(R.id.tv_piloto1)
+                val piloto2TextView = view.findViewById<TextView>(R.id.tv_piloto2)
+                val editButton = view.findViewById<ImageButton>(R.id.edit_button)
+                val deleteButton = view.findViewById<ImageButton>(R.id.delete_button)
 
 
-                val editButton = itemView.findViewById<ImageButton>(R.id.edit_button) // Edit button
-                val deleteButton = itemView.findViewById<ImageButton>(R.id.delete_button) // Delete button
+                nomeEquipeTextView.text = equipe?.nomeEquipe
+                piloto1TextView.text =  "${equipe?.piloto1} (#${equipe?.numeroPiloto1})" // Display pilot number
+                piloto2TextView.text =  "${equipe?.piloto2} (#${equipe?.numeroPiloto2})" // Display pilot number
 
-                editButton.setOnClickListener {
-                    // Handle Edit action here (e.g., open HelmetFragment with data to edit)
-                    //  (activity as? MainActivity)?.openHelmetFragmentForEdit(equipe) //Example
-                }
 
-                deleteButton.setOnClickListener {
-                    // Handle Delete action here
+
+                deleteButton.setOnClickListener{
                     EquipeRepository.equipes.remove(equipe)
-                    adapter.notifyDataSetChanged() // Update the list
+                    notifyDataSetChanged()
                 }
-
-
-                return itemView
+                return view
             }
         }
         listView.adapter = adapter
 
     }
-
 
 }

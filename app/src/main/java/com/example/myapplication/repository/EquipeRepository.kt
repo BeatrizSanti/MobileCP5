@@ -1,9 +1,7 @@
 package com.example.myapplication.repository
 
-import com.example.myapplication.Equipe
+import com.example.myapplication.model.Equipe
 
-// EquipeRepository.kt
 object EquipeRepository {
     val equipes = mutableListOf<Equipe>()
 }
-
