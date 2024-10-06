@@ -20,7 +20,8 @@
             android:text="Nome da Equipe"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/black" />  <!-- Add color for better contrast -->
+            android:textColor="@color/black"
+            android:contentDescription="Nome da equipe" />  <!-- Adicionando descrição para acessibilidade -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +42,8 @@
                 android:layout_height="wrap_content"
                 android:text="Piloto 1"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:contentDescription="Nome do primeiro piloto" />  <!-- Descrição para acessibilidade -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -55,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:text="Piloto 2"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:contentDescription="Nome do segundo piloto" />  <!-- Descrição para acessibilidade -->
         </LinearLayout>
 
     </LinearLayout>

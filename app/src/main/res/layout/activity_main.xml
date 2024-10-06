@@ -18,16 +18,18 @@
 
 
     <ImageView
-            android:id="@+id/f1Logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/f1_logo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:adjustViewBounds="true"
-            android:maxWidth="100dp" />
+        android:id="@+id/f1Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:src="@drawable/f1_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -61,14 +63,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/helmet_icon" />
+            android:src="@drawable/game_icon" />
 
         <ImageView
             android:id="@+id/icListar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/home_icon" />
+            android:src="@drawable/edit_icon" />
 
     </LinearLayout>
 

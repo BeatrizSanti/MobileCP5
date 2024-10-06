@@ -11,9 +11,8 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:gravity="start"
-        tools:ignore="ExtraText"> <!-- Alinhamento à esquerda -->
+        tools:ignore="ExtraText">
 
-        <!-- Título da Seção -->
         <TextView
             android:id="@+id/topStoriesTitle"
             android:layout_width="wrap_content"
@@ -24,11 +23,11 @@
             android:textColor="#000000"
             android:paddingBottom="8dp" />
 
-        <!-- Primeira notícia (Feature por Guenther Steiner) -->
+
         <ImageView
             android:id="@+id/home"
             android:layout_width="wrap_content"
-            android:layout_height="220dp"
+            android:layout_height="200dp"
             android:layout_marginTop="1dp"
             android:contentDescription="Home"
             android:scaleType="centerCrop"
@@ -72,7 +71,6 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Segunda notícia (Massa e Alonso) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +97,6 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Terceira notícia (Newey explicando Aston Martin) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -19,6 +19,6 @@ class EquipeViewModel : ViewModel() {
     }
 }
 
-data class Equipe(val nome: String, val piloto1: String, val piloto2: String) {
+data class Equipe(val nome: String, val piloto1: String, val numeroPiloto1: String, val piloto2: String,val numeroPiloto2: String) {
     val nomeEquipes: CharSequence? = null
 }
