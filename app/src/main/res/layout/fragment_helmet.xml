@@ -9,7 +9,7 @@
         android:id="@+id/CadastroTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crie Sua Equipe!!"
+        android:text="@string/activity_description"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#000000"
@@ -25,36 +25,36 @@
         android:id="@+id/et_nome_equipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome da Equipe" />
+        android:hint="@string/equip_name" />
 
     <EditText
         android:id="@+id/et_nome_piloto1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Piloto 1" />
+        android:hint="@string/pilot_1_name" />
 
     <EditText
         android:id="@+id/et_nome_numeroPiloto1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Número do Piloto 1" />
+        android:hint="@string/pilot_1_number" />
 
     <EditText
         android:id="@+id/et_nome_piloto2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Piloto 2" />
+        android:hint="@string/pilot_2_name" />
 
     <EditText
         android:id="@+id/et_nome_numeroPiloto2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Número do Piloto 2" />
+        android:hint="@string/pilot_2_number" />
 
     <Button
         android:id="@+id/btn_salvar_equipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salvar Equipe" />
+        android:text="@string/save_team" />
 
 </LinearLayout>

@@ -1,15 +1,14 @@
 package com.example.myapplication
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import com.example.myapplication.repository.EquipeRepository
 
 
 // ListarFragment.kt
@@ -35,6 +34,13 @@ class ListarFragment : Fragment() {
             EquipeRepository.equipes
         )
         listView.adapter = adapter
+
+//        listView.setOnItemClickListener { parent, view, position, id,  ->
+//
+//            view.findViewById(R.layout.fragment_helmet)
+//        }
     }
+
+
 }
 
