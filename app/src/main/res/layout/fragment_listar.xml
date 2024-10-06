@@ -17,7 +17,7 @@
         android:layout_gravity="center" />
 
     <ImageView
-        android:id="@+id/photo_verstappen"
+        android:id="@+id/photo_authentics"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:src="@drawable/f1game"
@@ -26,10 +26,7 @@
     <ListView
         android:id="@+id/list_view_equipes"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"
-        android:padding="8dp" />
+        android:layout_height="match_parent" />
+
 
 </LinearLayout>
