@@ -10,13 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="100dp"
         android:background="#F00"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
+
+    <ImageView
             android:id="@+id/f1Logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,11 +64,11 @@
             android:src="@drawable/helmet_icon" />
 
         <ImageView
-            android:id="@+id/icPerson"
+            android:id="@+id/icListar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/person_icon" />
+            android:src="@drawable/home_icon" />
 
     </LinearLayout>
 

@@ -1,15 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RacingFragment"
-    android:background="#ff0000">
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Primeiro Piloto - Max Verstappen (mantendo a imagem) -->
+    <ImageView
+        android:id="@+id/photo_verstappen"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/verstappen"
+        android:contentDescription="Foto do piloto Max Verstappen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/name_verstappen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Max VERSTAPPEN"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/points_verstappen"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/position_verstappen"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/position_verstappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="1"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/photo_verstappen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/team_verstappen"
+        android:layout_width="210dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:text="Red Bull Racing"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/name_verstappen"
+        app:layout_constraintTop_toBottomOf="@id/name_verstappen" />
+
+    <!-- Segundo Piloto -->
+    <TextView
+        android:id="@+id/points_verstappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="331 PTS"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359" />
+
+    <TextView
+        android:id="@+id/position_norris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photo_verstappen"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/name_norris"
+        android:layout_width="269dp"
+        android:layout_height="26dp"
+        android:text="Lando NORRIS"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/points_norris"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/position_norris"
+        app:layout_constraintTop_toTopOf="@id/position_norris" />
+
+    <TextView
+        android:id="@+id/team_norris"
+        android:layout_width="210dp"
+        android:layout_height="25dp"
+        android:text="McLaren"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/name_norris"
+        app:layout_constraintTop_toBottomOf="@id/name_norris"/>
+
+    <TextView
+        android:id="@+id/points_norris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="230 PTS"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/position_norris"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

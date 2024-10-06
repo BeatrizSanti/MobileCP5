@@ -5,51 +5,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HelmetFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HelmetFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var icHome: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate o layout do fragment
         return inflater.inflate(R.layout.fragment_helmet, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HelmetFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic fun newInstance(param1: String, param2: String) =
-                HelmetFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val nomeEquipeEditText = view.findViewById<EditText>(R.id.et_nome_equipe)
+        val nomePiloto1EditText = view.findViewById<EditText>(R.id.et_nome_piloto1)
+        val nomePiloto2EditText = view.findViewById<EditText>(R.id.et_nome_piloto2)
+        val salvarButton = view.findViewById<Button>(R.id.btn_salvar_equipe)
+
+        salvarButton.setOnClickListener {
+            val nomeEquipe = nomeEquipeEditText.text.toString()
+            val nomePiloto1 = nomePiloto1EditText.text.toString()
+            val nomePiloto2 = nomePiloto2EditText.text.toString()
+
+            if (nomeEquipe.isNotEmpty() && nomePiloto1.isNotEmpty() && nomePiloto2.isNotEmpty()) {
+                // Lógica para salvar a equipe
+                Toast.makeText(context, "Equipe $nomeEquipe salva!", Toast.LENGTH_SHORT).show()
+            } else {
+                // Exibir mensagem de erro se algum campo estiver vazio
+                Toast.makeText(context, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

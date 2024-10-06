@@ -14,8 +14,9 @@ import com.example.myapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var icHome: ImageView
     private lateinit var icFlag: ImageView
-    private lateinit var icPerson: ImageView
     private lateinit var icHelmet: ImageView
+    private lateinit var icListar: ImageView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         icHome = findViewById(R.id.icHome)
         icFlag = findViewById(R.id.icFlag)
-        icPerson = findViewById(R.id.icPerson)
         icHelmet = findViewById(R.id.icHelmet)
+        icListar = findViewById(R.id.icListar)
+
 
         icHome.setOnClickListener{
             supportFragmentManager.beginTransaction()
@@ -40,15 +42,16 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
-        icPerson.setOnClickListener{
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView,AccountFragment())
-                .commit()
-        }
 
         icHelmet.setOnClickListener{
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView,HelmetFragment())
+                .commit()
+        }
+
+        icListar.setOnClickListener{
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView,ListarFragment())
                 .commit()
         }
 
