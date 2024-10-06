@@ -5,4 +5,7 @@
     <item name="tv_nome_piloto1" type="id" />
     <item name="tv_nome_piloto2" type="id" />
     <item name="btn_delete_equipe" type="id" />
+    <item name="tv_piloto1" type="id" />
+    <item name="tv_piloto2" type="id" />
+    <item name="list_view_equipes" type="id" />
 </resources>

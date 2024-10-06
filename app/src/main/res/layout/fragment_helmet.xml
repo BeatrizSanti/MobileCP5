@@ -1,43 +1,31 @@
+<!-- fragment_helmet.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/topStoriesTitle"
+    <EditText
+        android:id="@+id/et_nome_equipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome da Equipe" />
+
+    <EditText
+        android:id="@+id/et_nome_piloto1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Piloto 1" />
+
+    <EditText
+        android:id="@+id/et_nome_piloto2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Piloto 2" />
+
+    <Button
+        android:id="@+id/btn_salvar_equipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crie sua própria equipe!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:paddingBottom="8dp" />
-
-        <EditText
-            android:id="@+id/et_nome_equipe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome da Equipe" />
-
-        <EditText
-            android:id="@+id/et_nome_piloto1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome do Piloto 1" />
-
-        <EditText
-            android:id="@+id/et_nome_piloto2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome do Piloto 2" />
-
-        <Button
-            android:id="@+id/btn_salvar_equipe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Salvar Equipe" />
-
-
-
+        android:text="Salvar Equipe" />
 </LinearLayout>

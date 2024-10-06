@@ -9,16 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-
+// HelmetFragment.kt
 class HelmetFragment : Fragment() {
-    private lateinit var icHome: ImageView
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate o layout do fragment
         return inflater.inflate(R.layout.fragment_helmet, container, false)
     }
 
@@ -36,12 +33,17 @@ class HelmetFragment : Fragment() {
             val nomePiloto2 = nomePiloto2EditText.text.toString()
 
             if (nomeEquipe.isNotEmpty() && nomePiloto1.isNotEmpty() && nomePiloto2.isNotEmpty()) {
-                // Lógica para salvar a equipe
-                Toast.makeText(context, "Equipe $nomeEquipe salva!", Toast.LENGTH_SHORT).show()
+                salvarEquipe(nomeEquipe, nomePiloto1, nomePiloto2)
             } else {
-                // Exibir mensagem de erro se algum campo estiver vazio
                 Toast.makeText(context, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
+    private fun salvarEquipe(nomeEquipe: String, nomePiloto1: String, nomePiloto2: String) {
+        val novaEquipe = Equipe(nomeEquipe, nomePiloto1, nomePiloto2)
+        EquipeRepository.equipes.add(novaEquipe) // Adiciona à lista
+        Toast.makeText(context, "Equipe $nomeEquipe salva!", Toast.LENGTH_SHORT).show()
+    }
 }
+

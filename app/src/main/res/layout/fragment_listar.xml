@@ -4,16 +4,15 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_listagem_equipes"
+    <ListView
+        android:id="@+id/list_view_equipes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/photo_verstappen"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/verstappen"
-        android:contentDescription="Foto do piloto Max Verstappen"
         />
 </LinearLayout>
