@@ -21,3 +21,8 @@ O **F1  App** é uma aplicação desenvolvida em Kotlin que oferece estatística
 2. Abra o projeto no Android Studio.
 
 3. Compile e execute o app em um dispositivo Android ou emulador.
+
+# Integrantes
+Beatriz Santi rm551856
+Mirelly Azevedo rm98672
+   
